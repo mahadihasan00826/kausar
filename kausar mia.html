@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.postimg.cc/zDx4vY2v/f20cf917-edbb-41ea-9d5a-b2aeec0471f3.png"
+        type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kausar Mia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .navbar ul li a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .action-btn {
+            padding: 10px 30px;
+            background-color: purple;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background-color: white;
+            color: purple;
+        }
+
+        @media(max-width: 768px) {
+            .navbar ul {
+                display: none;
+            }
+        }
+
+
+        .navbar-mobile {
+            display: none;
+        }
+
+        @media(max-width: 768px) {
+            .navbar-mobile {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                max-width: 500px;
+                z-index: 1000;
+            }
+
+            .navbar-mobile ul {
+                width: 100%;
+                max-width: 420px;
+                padding: 10px;
+                margin: 0px auto;
+                border: 0.5px solid rgba(255, 255, 255, 0.5);
+                border-radius: 50px;
+                background-color: rgba(255, 255, 255, 0.3);
+                text-align: center;
+            }
+
+            .navbar-mobile ul a {
+                display: inline-block;
+                margin: 0 10px;
+                text-decoration: none;
+                color: #fff;
+                font-size: medium;
+            }
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media(max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin-top: 50px;
+            }
+
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero-description {
+            color: #fff;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        .btn-primary {
+            padding: 15px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
+            background-color: purple;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: purple;
+        }
+
+        .btn-secendary {
+            padding: 15px 25px;
+            margin-left: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
+            background-color: transparent;
+            border: 2px solid purple;
+            cursor: pointer;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secendary:hover {
+            background-color: purple;
+            color: #fff;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .about {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(32, 32, 32, 0.5);
+        }
+
+        .about .container {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media(max-width: 768px) {
+            .about .container {
+                text-align: center;
+                max-width: 800px;
+            }
+
+            .about-content {
+                margin-top: 30px;
+                margin-left: 0;
+            }
+        }
+
+        .about-img img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+
+        }
+
+        .about-content {
+            width: 100%;
+            max-width: 600px;
+            margin-left: 50px;
+            color: #fff;
+        }
+
+        .about-content h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .social {
+            position: fixed;
+            top: 55%;
+            left: 10px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        .social ul a {
+            display: block;
+            margin: 15px 0;
+            font-size: 22px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(128, 0, 128, 1);
+            padding: 7px 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .social ul a:hover {
+            background-color: purple;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- hero section -->
+        <section id="hero" class="container">
+            <div class="navbar">
+                <div class="logo"><a href=""><img
+                            src="https://i.postimg.cc/zDx4vY2v/f20cf917-edbb-41ea-9d5a-b2aeec0471f3.png"
+                            alt="Kausar"></a>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Service</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="action-btn">Hire</div>
+            </div>
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi I'm Developer</h1>
+                    <p class="hero-description">I'm professional Developer, Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Aut architecto
+                        quis temporibus expedita reiciendis, nihil autem possimus eveniet porro perspiciatis, labore
+                        quisquam quidem molestias. Quam quos rerum ea officiis blanditiis. </p>
+                    <a href="" class="btn-primary">Hire Me</a>
+                    <a href="" class="btn-secendary">Contact</a>
+                </div>
+                <div class="hero-image"><img
+                        src="https://i.postimg.cc/1tLMhQQ3/53c00a21-3a31-4eb6-86ea-bf34370c5171.png" alt="kausar"></div>
+            </div>
+        </section>
+
+        <!-- mobile device navlink  -->
+        <section">
+            <div class="navbar-mobile">
+                <ul>
+                    <a href="/#hero"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href=""><i class="fa-solid fa-circle-user"></i> About</a>
+                    <a href=""><i class="fa-solid fa-gear"></i> Service</a>
+                    <a href=""><i class="fa-solid fa-headset"></i> Contact</a>
+                </ul>
+            </div>
+            </section>
+            <!-- social icon  -->
+            <section>
+                <div class="social">
+                    <ul>
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- About section -->
+            <section>
+                <div class="about">
+                    <div class="container">
+                        <div class="about-img">
+                            <img src="https://i.postimg.cc/1tLMhQQ3/53c00a21-3a31-4eb6-86ea-bf34370c5171.png"
+                                alt="Kausar">
+                        </div>
+                        <div class="about-content">
+                            <h3>About Me</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam aut excepturi saepe
+                                unde. Facere nobis, accusantium nulla debitis delectus omnis, facilis quos eum inventore
+                                ea a alias explicabo dignissimos. Ratione reiciendis quidem, eos ipsam, necessitatibus
+                                quas distinctio laboriosam eum itaque nesciunt fugit voluptates soluta eveniet? Totam
+                                explicabo amet necessitatibus, vitae, animi eveniet maxime neque qui doloremque
+                                inventore, repudiandae harum maiores nihil quidem omnis? Consectetur, unde, nulla
+                                dolorum ipsam atque sunt ab nesciunt architecto aspernatur hic est perspiciatis
+                                blanditiis reprehenderit eveniet nisi reiciendis laboriosam delectus quis consequuntur
+                                provident, eos explicabo sapiente laborum. Corrupti ut saepe sit harum qui ipsa quis
+                                suscipit maxime! Ducimus similique expedita commodi velit illo eaque tenetur incidunt id
+                                atque voluptatem, consequuntur at, sed unde temporibus? Error est, officia sit illo
+                                similique itaque explicabo, maiores earum accusamus soluta odit? Facilis mollitia quas
+                                voluptatem sapiente ullam dignissimos at expedita, excepturi iusto quibusdam harum, amet
+                                tempora praesentium distinctio odio officia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+</body>
+
+</html>
