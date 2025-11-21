@@ -19,6 +19,7 @@
 
         body {
             background-color: #000;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -26,12 +27,22 @@
             margin: auto;
             padding: 0 20px;
         }
-
+        .nav{
+           position: fixed;
+            width: 100%;
+            margin: 0 auto; 
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
         .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px 0;
+            color: #fff;
+            max-width: 1400px;
+            margin: auto;
+            
         }
 
         .logo a {
@@ -121,6 +132,9 @@
             flex-wrap: wrap-reverse;
             align-items: center;
             justify-content: space-between;
+            min-height: 90vh;
+            padding-top: 80px;
+
         }
 
         @media(max-width: 768px) {
@@ -190,7 +204,6 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 600px;
         }
 
         .about {
@@ -293,13 +306,54 @@
             font-size: 16px;
             line-height: 1.6;
         }
+        .my-service{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            
+        }
+        .my-service .card{
+            width: 100%;
+            max-width: 400px;
+            gap: 30px;
+            background-color: rgba(32, 32, 32, 0.5);
+            padding: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+            border-radius: 2%;
+        }
+        .my-service .card:hover{
+            background-color: purple;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .my-service .card img{
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 10px;
+          transition: all 0.3s ease;
+        }
+        .my-service .card:hover img{
+            transform: scale(1.05);
+        }
+        .my-service .card h4{
+            font-size: 24px;
+            margin: 15px 0;
+        }
+        .my-service .card p{
+            font-size: 16px;
+            line-height: 1.6;
+        }       
     </style>
 </head>
 
 <body>
     <div>
-        <!-- hero section -->
-        <section id="hero" class="container">
+        <!-- navbar section -->
+        <section class="nav"> 
             <div class="navbar">
                 <div class="logo"><a href=""><img
                             src="https://i.postimg.cc/zDx4vY2v/f20cf917-edbb-41ea-9d5a-b2aeec0471f3.png"
@@ -307,14 +361,17 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="action-btn">Hire</div>
             </div>
+          </section>
+        <!-- hero section -->
+        <section id="hero" class="container">
             <div class="hero">
                 <div class="hero-content">
                     <h1 class="hero-title">Hi I'm Developer</h1>
@@ -334,10 +391,10 @@
         <section">
             <div class="navbar-mobile">
                 <ul>
-                    <a href="/#hero"><i class="fa-solid fa-house"></i> Home</a>
-                    <a href=""><i class="fa-solid fa-circle-user"></i> About</a>
-                    <a href=""><i class="fa-solid fa-gear"></i> Service</a>
-                    <a href=""><i class="fa-solid fa-headset"></i> Contact</a>
+                    <a href="#hero"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="#about"><i class="fa-solid fa-circle-user"></i> About</a>
+                    <a href="#services"><i class="fa-solid fa-gear"></i> Service</a>
+                    <a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a>
                 </ul>
             </div>
             </section>
@@ -354,7 +411,7 @@
             </section>
 
             <!-- About section -->
-            <section>
+            <section id="about">
                 <div class="about">
                     <div class="container">
                         <div class="about-img">
@@ -383,7 +440,7 @@
             </section>
 
             <!-- Services -->
-            <section>
+            <section id="services">
                 <div class="Services">
                     <div class="container">
                         <div class="services-contant">
@@ -396,21 +453,21 @@
                         <div class="my-service">
                             <!-- card 1 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/4373pJk6/web.jpg" alt="Web Development">
                                 <h4>Web Development</h4>
                                 <p>I build modern, responsive, and high-performance websites tailored to your business
                                     needs. Clean code, fast loading, and secure development are my priorities.</p>
                             </div>
                             <!-- card 2 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/XvGv9VSZ/fronend.jpg" alt="Front-End Design">
                                 <h4>Front-End Design</h4>
                                 <p>I create visually appealing and user-friendly front-end interfaces using modern UI/UX
                                     practices. Fully responsive, clean, and pixel-perfect designs.</p>
                             </div>
                             <!-- card 3 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/W4F402Lz/figma_to_web.jpg" alt="Figma to Web">
                                 <h4>Figma to Web</h4>
                                 <p>I convert your Figma designs into fully functional, responsive websites. Clean
                                     structure, accurate layout, and seamless web implementation based on your design.
@@ -418,21 +475,21 @@
                             </div>
                             <!-- card 4 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/YCy94vVY/api.jpg" alt="API Integration">
                                 <h4>API Integration</h4>
                                 <p>I integrate third-party APIs to add advanced features like payments, authentication,
                                     and data connectivity—fast, secure, and reliable. </p>
                             </div>
                             <!-- card 5 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/Pqpq1tsq/2267317.jpg" alt="Database Management System">
                                 <h4>Database Management System </h4>
                                 <p>I design, optimize, and manage databases to ensure fast performance, security, and
                                     efficient data handling for your applications.</p>
                             </div>
                             <!-- card 3 -->
                             <div class="card">
-                                <img src="" alt="">
+                                <img src="https://i.postimg.cc/YCy94vVY/api.jpg" alt="CMS with Squarespace">
                                 <h4>CMS with Squarespace</h4>
                                 <p>I develop professional and customizable websites using Squarespace. Easy to manage,
                                     fully responsive, and tailored to your goals.</p>
